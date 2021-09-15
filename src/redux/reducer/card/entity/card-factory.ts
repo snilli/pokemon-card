@@ -1,5 +1,5 @@
-import {Card, CardAttack, CardWeakness} from '../../mock/card.interface'
-import {CardEntity} from '../redux/reducer/card/card-entity'
+import {Card, CardAttack, CardWeakness} from '../../../../../mock/cards.interface'
+import {CardEntity} from './card-entity'
 
 export class CardEntityFactory {
     static fromCardlist(card: Card): CardEntity {

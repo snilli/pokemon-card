@@ -1,5 +1,5 @@
 import {createSlice, current, PayloadAction} from '@reduxjs/toolkit'
-import {CardEntity} from '../card/card-entity'
+import {CardEntity} from '../card/entity/card-entity'
 import {fetchCard} from '../card/card-reducer'
 
 export interface UiState {

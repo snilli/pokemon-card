@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
-import {Cardlist} from '../../../../mock/card.interface'
-import {CardEntity, cardsAdapter} from './card-entity'
-import {CardEntityFactory} from '../../../service/card-factory'
+import {Cardlist} from '../../../../mock/cards.interface'
+import {CardEntity, cardsAdapter} from './entity/card-entity'
+import {CardEntityFactory} from './entity/card-factory'
 import {apiUrl} from '../../../utils/constant'
 
 export const fetchCard = createAsyncThunk('card/fetchCard', async (text?: string): Promise<CardEntity[]> => {

@@ -16,7 +16,7 @@ interface Card {
     img: string
 }
 
-interface ModalProps {
+export interface ModalProps {
     className: string
     theme: Theme
     cards: Card[]
