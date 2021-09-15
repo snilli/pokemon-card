@@ -1,5 +1,5 @@
 export interface Cardlist {
-    card: Card[]
+    cards: Card[]
 }
 
 export interface CardAbility {
