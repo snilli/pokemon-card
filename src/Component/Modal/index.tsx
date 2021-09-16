@@ -6,7 +6,7 @@ import {closeModal, selectCard} from '../../redux/reducer/ui/ui-reducer'
 import DeckCardDetail from '../DeckCardDetail'
 import SearchInput from './SearchInput'
 
-interface Card {
+export interface Card {
     id: string
     name: string
     hp: number

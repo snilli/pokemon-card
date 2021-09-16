@@ -1,7 +1,7 @@
 import React, {memo} from 'react'
 import styled from 'styled-components'
 
-interface HappinessBarProps {
+export interface HappinessBarProps {
     className: string
     value: number
 }

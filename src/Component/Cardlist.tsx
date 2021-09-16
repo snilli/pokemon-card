@@ -4,7 +4,7 @@ import DeckCardDetail from './DeckCardDetail'
 import {unSelectCard} from '../redux/reducer/ui/ui-reducer'
 import {useDispatch} from 'react-redux'
 
-interface Card {
+export interface Card {
     id: string
     name: string
     hp: number
@@ -14,7 +14,7 @@ interface Card {
     img: string
 }
 
-interface CardlistProps {
+export interface CardlistProps {
     className: string
     cards: Card[]
 }

@@ -2,7 +2,7 @@ import React, {memo} from 'react'
 import styled from 'styled-components'
 import {Theme} from '../../utils/theme'
 
-interface ProgressBarProps {
+export interface ProgressBarProps {
     className: string
     label: string
     value: string

@@ -52,27 +52,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "moduleFileExtensions": [
-      "tsx",
-      "ts",
-      "js",
-      "json",
-      "png"
-    ],
-    "roots": [
-      "src"
-    ],
-    "transform": {
-      "^.+\\.ts$": "ts-jest",
-      "^.+\\.[jt]sx?$": "babel-jest"
-    },
-    "testMatch": [
-      "<rootDir>/apps/**/tests/**/*.test.ts",
-      "<rootDir>/cores/**/tests/**/*.test.ts",
-      "<rootDir>/libs/**/tests/**/*.test.ts"
-    ]
   }
 }

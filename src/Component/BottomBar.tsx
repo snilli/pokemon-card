@@ -4,7 +4,7 @@ import {Theme} from '../utils/theme'
 import {useDispatch} from 'react-redux'
 import {openModal} from '../redux/reducer/ui/ui-reducer'
 
-interface BottomBarProps {
+export interface BottomBarProps {
     theme: Theme;
     className: string
 }

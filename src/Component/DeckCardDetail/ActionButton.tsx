@@ -1,7 +1,7 @@
 import React, {FC, memo} from 'react'
 import styled from 'styled-components'
 
-interface ActionButtonProps {
+export interface ActionButtonProps {
     className: string
     callback: () => void
     label: string

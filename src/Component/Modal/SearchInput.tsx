@@ -3,16 +3,18 @@ import styled from 'styled-components'
 import {useDebounceCallback} from '@react-hook/debounce'
 import {useDispatch} from 'react-redux'
 import {fetchCard} from '../../redux/reducer/card/card-reducer'
+import {Theme} from '../../utils/theme'
 
-interface SearchInputProps {
+export interface SearchInputProps {
     className: string
     label: string
+    theme: Theme
 }
 
 const SearchInput: React.FC<SearchInputProps> = (props) => {
     const [searchString, setSearchString] = useState('')
     const dispatch = useDispatch()
-    
+
     const fetchCallback = useDebounceCallback(() => {
         dispatch(fetchCard(searchString))
     }, 500)
@@ -37,6 +39,7 @@ const SearchInputStyled = styled(SearchInput)`
     height: 60%;
     font-size: 2rem;
     font-family: Gaegu, cursive !important;
+    border: 1px solid ${(props: SearchInputProps) => props.theme.colors.component.searchBoxBorder};
   }
 
   > img {

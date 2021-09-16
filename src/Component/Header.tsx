@@ -1,7 +1,7 @@
 import React, {memo} from 'react'
 import styled from 'styled-components'
 
-interface HeaderProps {
+export interface HeaderProps {
     className: string
 }
 

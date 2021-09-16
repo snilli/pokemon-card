@@ -5,7 +5,7 @@ import HappinessBar from './HappinessBar'
 import ActionButton from './ActionButton'
 import {Theme} from '../../utils/theme'
 
-interface DeckCardDetailProps {
+export interface DeckCardDetailProps {
     theme: Theme
     className: string
     name: string
