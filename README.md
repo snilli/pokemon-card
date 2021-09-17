@@ -1,4 +1,4 @@
-# AppMan Pokédex (My Pokémon cards list)
+Pokédex (My Pokémon cards list)
 
 We want you to build a web application with the following requirements:
 
