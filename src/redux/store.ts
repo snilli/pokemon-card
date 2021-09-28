@@ -1,9 +1,8 @@
-import {configureStore} from '@reduxjs/toolkit'
-import {persistedReducer, ReducerState} from './reducer'
-import {persistStore} from 'redux-persist'
+import {AnyAction, configureStore, Store} from '@reduxjs/toolkit'
+import {persistedReducer, RootState} from './reducer'
 import {useMemo} from 'react'
 
-export function makeStore(preloadedState: ReducerState): typeof configureStore {
+export function makeStore(preloadedState: RootState) {
     return configureStore({
         reducer: persistedReducer,
         middleware: (getDefaultMiddleware) => {
@@ -15,7 +14,9 @@ export function makeStore(preloadedState: ReducerState): typeof configureStore {
     })
 }
 
-export const initializeStore = (preloadedState: ReducerState) => {
+let store: Store<RootState, AnyAction> | undefined
+
+export const initializeStore = (preloadedState: RootState) => {
     let _store = store ?? makeStore(preloadedState)
 
     // After navigating to a page with an initial Redux state, merge that state
@@ -37,19 +38,6 @@ export const initializeStore = (preloadedState: ReducerState) => {
     return _store
 }
 
-export const store = configureStore({
-    reducer: persistedReducer,
-    middleware: (getDefaultMiddleware) => {
-        return getDefaultMiddleware({
-            serializableCheck: false,
-        })
-    },
-})
-
-export const persistor = persistStore(store)
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
-
-export const useStore = (initialState: ReducerState) => {
+export const useStore = (initialState: RootState) => {
     return useMemo(() => initializeStore(initialState), [initialState])
 }

@@ -11,7 +11,7 @@ const reducer = combineReducers({
     ui: uiReducer,
 })
 
-export type ReducerState = {
+export type RootState = {
     card: EntityState<CardEntity>;
     ui: UiState;
 } & PersistPartial

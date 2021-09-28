@@ -1,13 +1,13 @@
 import React, {useCallback, useEffect} from 'react'
 import {fetchCard} from '../redux/reducer/card/card-reducer'
 import {useDispatch, useSelector} from 'react-redux'
-import {RootState} from '../redux/store'
+import {RootState} from '../redux/reducer'
 import Header from '../Component/Header'
 import Footer from '../Component/BottomBar'
 import Decklist from '../Component/Cardlist'
 import Modal from '../Component/Modal'
 
-const App: React.FC = () => {
+const PokemonCard: React.FC = () => {
     const dispatch = useDispatch()
     const cardIds = useSelector<RootState>(state => state.card.ids) as number[]
     const isOpenModal = useSelector<RootState>(state => state.ui.isOpenModal)
@@ -22,9 +22,8 @@ const App: React.FC = () => {
     }, [fetchCardCallBack, cardIds.length])
 
     return (
-
         <div className="App">
-            <style jsx>{`
+            <style jsx global>{`
               body {
                 margin: 0;
                 padding: 0;
@@ -75,4 +74,4 @@ const App: React.FC = () => {
     )
 }
 
-export default App
+export default PokemonCard

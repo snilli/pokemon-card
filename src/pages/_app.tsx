@@ -7,11 +7,10 @@ import {theme} from '../utils/theme'
 import React from 'react'
 import {persistStore} from 'redux-persist'
 
-export default function MyApp({Component, pageProps}: AppProps) {
+export default function MyApp({Component, pageProps}: AppProps): JSX.Element {
     const store = useStore(pageProps.initialReduxState)
-    const persistor = persistStore(store, {}, function () {
-        persistor.persist()
-    })
+    const persistor = persistStore(store)
+    persistor.persist()
 
     return (
         <Provider store={store}>
