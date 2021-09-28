@@ -55,9 +55,10 @@ const Modal: React.FC<ModalProps> = (props) => {
 const ModalStyled = styled(Modal)`
   > .overlay {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
+    width: 1024px;
+    height: 770px;
+    top: 78px;
+    left: calc((100vw - 1053px) / 2);
     background-color: ${(props: ModalProps) => props.theme.colors.component.modalOutside};
   }
 
@@ -68,8 +69,8 @@ const ModalStyled = styled(Modal)`
     border-radius: 4px;
     top: 0;
     background-color: ${(props: ModalProps) => props.theme.colors.component.modalContentBackground};
-    margin-top: 30px;
-    margin-left: calc((1024px - 940px) / 2);
+    margin-top: 110px;
+    margin-left: calc((100vw - 940px) / 2);
     display: grid;
     grid-template-rows: 10% 90%;
     padding: 10px 18px;

@@ -25,7 +25,7 @@ const SearchInput: React.FC<SearchInputProps> = (props) => {
                 setSearchString(e.target.value)
                 fetchCallback()
             }}/>
-            <img width="45px" src={process.env.PUBLIC_URL + '/images/search.png'} className="search-image"
+            <img width="45px" src="/images/search.png" className="search-image"
                  alt="search-img"/>
         </div>
     )

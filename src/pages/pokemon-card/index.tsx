@@ -1,13 +1,13 @@
 import React, {useCallback, useEffect} from 'react'
-import {fetchCard} from '../redux/reducer/card/card-reducer'
+import {fetchCard} from '../../redux/reducer/card/card-reducer'
 import {useDispatch, useSelector} from 'react-redux'
-import {RootState} from '../redux/reducer'
-import Header from '../Component/Header'
-import Footer from '../Component/BottomBar'
-import Decklist from '../Component/Cardlist'
-import Modal from '../Component/Modal'
+import {RootState} from '../../redux/reducer'
+import Header from '../../Component/Header'
+import Footer from '../../Component/BottomBar'
+import Decklist from '../../Component/Cardlist'
+import Modal from '../../Component/Modal'
 
-const PokemonCard: React.FC = () => {
+const Index: React.FC = () => {
     const dispatch = useDispatch()
     const cardIds = useSelector<RootState>(state => state.card.ids) as number[]
     const isOpenModal = useSelector<RootState>(state => state.ui.isOpenModal)
@@ -22,16 +22,13 @@ const PokemonCard: React.FC = () => {
     }, [fetchCardCallBack, cardIds.length])
 
     return (
-        <div className="App">
-            <style jsx global>{`
-              body {
-                margin: 0;
-                padding: 0;
-                /*font-family: sans-serif;*/
-                font-family: 'Atma', cursive;
-              }
-
-              #root {
+        <div className="App" style={{
+            margin: 0,
+            padding: 0,
+            fontFamily: '\'Atma\', cursive',
+        }}>
+            <style jsx>{`
+              #content {
                 width: 1024px;
                 height: 768px;
                 margin: 50px auto;
@@ -42,7 +39,7 @@ const PokemonCard: React.FC = () => {
                 position: relative;
               }
 
-              #root:before {
+              #content:before {
                 content: "";
                 position: absolute;
                 left: -80px;
@@ -53,7 +50,7 @@ const PokemonCard: React.FC = () => {
                 top: 40%;
               }
 
-              #root:after {
+              #content:after {
                 content: "";
                 width: 60px;
                 height: 60px;
@@ -64,14 +61,15 @@ const PokemonCard: React.FC = () => {
                 top: 50%;
                 border: 1px inset #7b7b7b;
               }
-
             `}</style>
-            <Header/>
-            <Decklist cards={selectedCards}/>
-            <Footer/>
+            <div id="content">
+                <Header/>
+                <Decklist cards={selectedCards}/>
+                <Footer/>
+            </div>
             {isOpenModal && <Modal cards={searchCards}/>}
         </div>
     )
 }
 
-export default PokemonCard
+export default Index

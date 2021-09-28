@@ -27,7 +27,7 @@ const HappinessBarStyled = styled(HappinessBar)`
     width: 43px;
     height: 43px;
     background-size: 43px 43px;
-    background-image: url(${() => process.env.PUBLIC_URL + '/images/cute.png'});
+    background-image: url("/images/cute.png");
   }
 `
 
